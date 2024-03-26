@@ -1,0 +1,9 @@
+public class Example26 {
+    public static void main(String args[]) {
+        int a = 20;
+        Integer in = a;//自动装箱
+        System.out.println(in);
+        int l =in;//自动拆箱
+        System.out.println(l);
+    }
+}

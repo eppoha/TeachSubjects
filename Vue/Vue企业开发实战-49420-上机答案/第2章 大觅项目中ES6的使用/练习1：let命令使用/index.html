@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>let、const命令</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+
+</body>
+
+</html>
+<script>
+    // 这样是有问题的
+    /* var btns = document.querySelectorAll('button');
+    for (var i = 0; i < btns.length; i++) {//for是同步操作
+        btns[i].onclick = function () {//函数执行时异步操作
+            console.log("这是第" + i + "个按钮");//函数执行找不到i，便会往上面找 所以是5
+        }
+    } */
+
+    // ES6的解决方案:作用域互不影响
+     let btns = document.querySelectorAll('button');
+    for (let i = 0; i < btns.length; i++) {
+        btns[i].onclick = function () {
+            console.log("这是第" + i + "个按钮");
+        }
+    } 
+
+
+</script>

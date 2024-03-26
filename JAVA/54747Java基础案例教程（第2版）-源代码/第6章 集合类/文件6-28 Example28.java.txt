@@ -1,0 +1,15 @@
+import java.util.*;
+public class Example28 {
+    public static void main(String[] args) {
+        //List集合装载的是Integer
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        test(list);
+    }
+    public static void test(List<?> list) {
+        for(int i=0;i<list.size();i++){
+            System.out.println(list.get(i));
+        }
+    }
+}

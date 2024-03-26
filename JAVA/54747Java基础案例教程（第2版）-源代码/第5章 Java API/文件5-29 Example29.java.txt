@@ -1,0 +1,25 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+public class Example29 {
+    public static void main(String[] args) {
+        Pattern p=Pattern.compile("\\d+");
+        Matcher m=p.matcher("22bb23");
+        System.out.println("字符串是否匹配:"+ m.matches());  
+        Matcher m2=p.matcher("2223");
+        System.out.println("字符串是否匹配:"+ m2.matches());
+        System.out.println("对前面的字符串匹配结果为"+ m.lookingAt());
+        Matcher m3=p.matcher("aa2223");
+        System.out.println("对前面的字符串匹配结果为:"+m3.lookingAt());
+        m.find();//返回true
+        System.out.println("字符串任何位置是否匹配:"+ m.find());
+        m3.find();//返回true
+        System.out.println("字符串任何位置是否匹配:"+ m3.find());
+        Matcher m4=p.matcher("aabb");
+        System.out.println("字符串任何位置是否匹配:"+ m4.find());
+        Matcher m1=p.matcher("aaa2223bb");
+        m1.find();//匹配2223
+        System.out.println("上一个匹配的起始索引::"+  m1.start());
+        System.out.println("最后一个字符匹配后的偏移量"+  m1.end());
+        System.out.println("匹配到的子字符串:"+  m1.group());
+    }
+}

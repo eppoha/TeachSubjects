@@ -1,0 +1,23 @@
+import java.io.IOException;
+import java.io.File;
+class Examole01 {
+    public static void main(String[] args) throws IOException {
+        //磁盘下创建文件
+        File file=new File("d:\\hello\\demo.txt");
+        if(file.exists()){                   //如果存在这个文件就删除，否则就创建
+            file.delete();
+        }else{
+            System.out.println(file.createNewFile());
+        }
+        //在磁盘下创建一层目录,并且在目录下创建文件文件
+        File fileDemo=new File("d:\\hello1\\demo.txt");
+        if(!(fileDemo.getParentFile().exists())){  //判断d:\demo目录是否存在
+            fileDemo.getParentFile().mkdir();
+        }
+        if(fileDemo.exists()){                //如果存在这个文件就删除，否则就创建
+            fileDemo.delete();
+        }else{
+            System.out.println(fileDemo.createNewFile());
+        }
+    }
+}

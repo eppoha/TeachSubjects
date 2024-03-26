@@ -1,0 +1,19 @@
+public class Example24 {
+    public static void main(String[] args) {
+        //创建对象
+        Dog dog = new Dog();
+        //调用方法,传入的参数是什么类型,返回值就是什么类型
+        dog.show("hello");
+        dog.show(12);
+        dog.show(12.5);
+    }
+}
+class Dog{
+        String eat;
+        Integer age;
+        public <T> void show(T t) {
+        System.out.println(t);
+        }
+}
+        tool.show(12.5);
+    }

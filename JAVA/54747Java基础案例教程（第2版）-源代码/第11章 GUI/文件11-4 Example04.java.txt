@@ -1,0 +1,24 @@
+import javax.swing.*;
+import java.awt.*;
+class BorderLayoutDemo extends JFrame {
+     //构造函数，初始化对象值
+     public BorderLayoutDemo(){
+        //设置为边界布局，组件间横向、纵向间距均为5像素
+        setLayout(new BorderLayout(5,5));
+        setFont(new Font("Helvetica", Font.PLAIN, 14));
+        //将按钮添加到窗口中
+        getContentPane().add("North", new JButton(BorderLayout.NORTH));
+        getContentPane().add("South", new JButton(BorderLayout.SOUTH));
+        getContentPane().add("East",new JButton(BorderLayout.EAST));
+        getContentPane().add("West",new JButton(BorderLayout.WEST));
+        getContentPane().add("Center",new JButton(BorderLayout.CENTER));
+ }
+    public static void main(String args[]) {
+        BorderLayoutDemo f = new BorderLayoutDemo();
+        f.setTitle("边界布局");
+        f.pack();
+        f.setVisible(true);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setLocationRelativeTo(null);//让窗体居中显示
+    }
+}

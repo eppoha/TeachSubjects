@@ -1,0 +1,11 @@
+import java.util.*;
+public class Example23 {
+	public static void main(String[] args) {
+		ArrayList<Integer> list = new ArrayList<Integer>(); 
+		list.add(1);             // 添加字符串对象
+		list.add(2);
+		for (Integer str : list) {     // 遍历集合
+			System.out.println(str); 
+		}
+	}
+}

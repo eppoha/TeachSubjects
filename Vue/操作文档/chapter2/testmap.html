@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>TestMap</h1>
+    </body>
+</html>
+<script>
+    //==========示例25==========
+    const map1 = new Map([
+        ['name', '张三'],
+        ['title', 'Author']
+    ])
+    console.log("==========示例25==========")
+    console.log(map1)
+
+    //==========示例26==========
+    const map2 = new Map([
+        ['name', '张三'],
+        ['title', 'Author']
+    ])
+    console.log("==========示例26==========")
+    console.log(map2.size)
+
+    //==========示例27==========
+    const map3 = new Map([
+        ['name', '张三'],
+        ['title', 'Author']
+    ])
+    map3.set('friends', ['大花', '小朵']).set('edition', 6)
+    console.log("==========示例27==========")
+    console.log(map3)
+
+    //==========示例28==========
+    const map4 = new Map([
+        ['name', '张三'],
+        ['title', 'Author']
+    ])
+    map4.set('friends', ['大花', '小朵']).set('edition', 6)
+    console.log("==========示例28==========")
+    console.log(map4.get('name'))
+
+    //==========示例29==========
+    const map5 = new Map([
+        ['name', '张三'],
+        ['title', 'Author']
+    ])
+    map5.set('friends', ['大花', '小朵']).set('edition', 6)
+    console.log("==========示例29==========")
+    console.log(map5.has('edition'))
+    console.log(map5.has('name'))
+    console.log(map5.has('years'))
+
+    //==========示例30==========
+    const map6 = new Map([
+        ['name', '张三'],
+        ['title', 'Author']
+    ])
+    map6.set('friends', ['大花', '小朵']).set('edition', 6)
+    console.log("==========示例30==========")
+    console.log(map6.delete('edition'))
+    console.log(map6.delete('years'))
+    console.log(map6)
+
+    //==========示例31==========
+    const map7 = new Map([
+        ['name', '张三'],
+        ['title', 'Author']
+    ])
+    console.log("==========示例31==========")
+
+    for (let key of map7.keys()){
+        console.log(key)
+    }
+
+    for (let value of map7.values()){
+        console.log(value)
+    }
+
+    for (let [key,value] of map7.entries()){
+        console.log(key,value)
+    }
+    
+    map7.forEach(function(value, index){
+        console.log(index + ":" + value)
+    })
+
+    
+    //作业1
+    var json = [
+        { "id": 1001, "market": "上交所", "hypCode": "shzfz01", "enterDate": "2018-05-14", "operator": "admin" },
+        { "id": 1002, "market": "北金所", "hypCode": "shzfz01", "enterDate": "2018-05-16", "operator": "admin" }
+    ];
+    var newJson = json.map((us) => {
+        return { newmarket: us.market, newoperator: us.operator }
+    });
+    console.log(newJson);
+
+    // [{ newmarket: "上交所", newoperator: "admin" }, { newmarket: "北金所", newoperator: "admin" }]
+
+
+</script>

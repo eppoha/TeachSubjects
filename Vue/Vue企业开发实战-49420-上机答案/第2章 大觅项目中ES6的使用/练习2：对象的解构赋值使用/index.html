@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>提取JSON数据的值</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // 示例03:提取JSON数据的值
+     var jsonData = {
+        id: 42,
+        status: "OK",
+        data: [123, 542]
+    };
+    let { id, status, data: number } = jsonData;
+    console.log(id, status, number); 
+    // 42, "OK", [123, 542]
+
+
+
+
+
+</script>

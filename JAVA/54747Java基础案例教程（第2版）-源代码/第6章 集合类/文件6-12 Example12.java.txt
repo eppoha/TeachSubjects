@@ -1,0 +1,28 @@
+import java.util.TreeSet;
+class Student implements Comparable<Student> {
+    private String id;
+    private String name;
+    public Student(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+    // 重写toString()方法
+    public String toString() {
+        return id + ":" + name;
+    }
+    @Override
+    public int compareTo(Student o) {
+        // return 0;          //集合中只有一个元素
+        // return 1;          //集合按照怎么存就怎么取
+           return -1;         //集合按照存入顺序倒过来进行存储
+    }
+}
+public  class Example12 {
+    public static void main(String[] args) {
+         TreeSet ts = new TreeSet();
+         ts.add(new Student("1","张三"));
+         ts.add(new Student("2", "李四"));
+         ts.add(new Student("2", "王五"));
+         System.out.println(ts);
+        }
+}

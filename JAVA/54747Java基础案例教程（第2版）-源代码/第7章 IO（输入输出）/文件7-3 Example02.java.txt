@@ -1,0 +1,9 @@
+public class Example02 {
+    public static void main(String[] args) throws IOException {
+         // 提供临时文件的前缀和后缀
+        File f = File.createTempFile("itcast-", ".txt"); 
+        f.deleteOnExit(); // JVM退出时自动删除
+        System.out.println(f.isFile());
+        System.out.println(f.getPath());
+    }
+}

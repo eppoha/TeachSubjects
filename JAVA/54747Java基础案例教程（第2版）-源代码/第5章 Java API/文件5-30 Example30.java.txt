@@ -1,0 +1,13 @@
+public class Example30{
+    public static void main(String[] args) {
+        String str = "A1B22DDS34DSJ9D".replaceAll("\\d+","_");
+        System.out.println("×Ö·ûÌæ»»ºóÎª£º"+str);
+        boolean te = "321123as1".matches("\\d+");
+        System.out.println("×Ö·û´®ÊÇ·ñÆ¥Åä£º"+te);
+        String s [] ="SDS45d4DD4dDS88D".split("\\d+");
+        System.out.print("×Ö·û´®²ð·ÖºóÎª£º");
+        for(int i=0;i<s.length;i++){
+            System.out.print(s[i]+"  ");
+        }
+    }
+}

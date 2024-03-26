@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    </head>
+    <body>
+        <button >Primary</button>
+    </body>
+
+</html>
+
+<script>
+    //例13
+    //左右变量顺序没有对应，但是有同名属性
+    let {a1, b1} = {b1 : "aaa", a1 : "bbb"}
+    console.log("a1:", a1)
+    //a1: bbb
+    console.log("b1:", b1)
+    //b1: aaa
+
+    //没有同名属性
+    let {c1} = {b1 : "aaa", a1 : "bbb"}
+    console.log("c1:", c1)
+    //c1: undefined
+
+    //例14
+    //变量名和属性名不一致
+    let obj = {first : "hello", last : "world"}
+    //实际上就是新建变量f和l，让其值为变量first 和 last的值
+    let {first : f, last : l} = obj
+    console.log("f:", f)
+    //f: hello
+    console.log("l:", l)
+    //l: world
+
+    //例15
+    //此处foo仅是匹配的模式，baz才是赋值
+    let {foo: baz} = {foo : "aaa", bar : "bbb"}
+    console.log("baz:", baz)
+    //baz: aaa
+    //console.log("foo:", foo)
+    //Uncaught ReferenceError: foo is not defined
+    
+    //例16
+    //默认值生效
+    let {x : y = 3} = {}
+    //console.log("x:", x)
+    //Uncaught ReferenceError: x is not defined
+    console.log("y:", y)
+    //y: 3
+
+    //解构成功
+    let {x1 : y1 = 3} = {x1 : 5}
+    //console.log("x1:", x1)
+    //Uncaught ReferenceError: x1 is not defined
+    console.log("y1:", y1)
+    //y1: 5
+
+    
+    // 上机练习:提取JSON数据的值
+    var jsonData = {
+        id: 42,
+        status: "OK",
+        data: [123, 542]
+    };
+    let { id, status, data: number } = jsonData;
+    console.log(id, status, number); 
+    // 42, "OK", [123, 542]
+
+    var jsonData = {
+        id1: 42,
+        status1: "OK",
+        data1: [123, 542]
+    };
+    //注意变量名和属性要统一， 顺序不影响赋值
+    let { id1, data1, status1} = jsonData;
+    console.log(id1, status1, data1); 
+    
+
+</script>

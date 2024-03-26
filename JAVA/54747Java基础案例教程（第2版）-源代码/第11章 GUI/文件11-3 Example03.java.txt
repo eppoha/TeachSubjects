@@ -1,0 +1,16 @@
+import javax.swing.*;
+import java.awt.*;
+class Example03 {
+   public static void main(String[] args) {
+       JFrame frame = new JFrame("hello world");
+       //设置窗体中的布局管理器为FlowLayout，所有的组件居中对齐，水平和垂直间距为3
+       frame.setLayout(new FlowLayout(FlowLayout.CENTER,3,3));
+       JButton button = null;
+       for(int i = 0; i <9; i++){
+           button = new JButton("按钮"+i);
+            frame.add(button);
+       }
+       frame.setSize(280,250);
+       frame.setVisible(true);
+    }
+}

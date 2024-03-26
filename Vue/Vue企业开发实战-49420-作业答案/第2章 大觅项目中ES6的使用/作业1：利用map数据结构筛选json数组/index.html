@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>利用map数据结构筛选json数组</title>
+</head>
+
+<body>
+</body>
+
+</html>
+<script>
+
+var json = [
+    { "id": 1001, "market": "上交所", "hypCode": "shzfz01", "enterDate": "2018-05-14", "operator": "admin" },
+    { "id": 1002, "market": "北金所", "hypCode": "shzfz01", "enterDate": "2018-05-16", "operator": "admin" }
+];
+var newJson = json.map((us) => {
+    return { newmarket: us.market, newoperator: us.operator }
+});
+console.log(newJson);
+
+// [{ newmarket: "上交所", newoperator: "admin" }, { newmarket: "北金所", newoperator: "admin" }]
+</script>
